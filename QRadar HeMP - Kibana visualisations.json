@@ -1,0 +1,227 @@
+[
+  {
+    "_id": "QRadar-CPU-Usage,-Median",
+    "_type": "visualization",
+    "_source": {
+      "title": "QRadar - CPU Usage, Median",
+      "visState": "{\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"overlap\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":true,\"yAxis\":{\"max\":100,\"min\":0}},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"qradar_metric_value\",\"percents\":[50]}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"qradar_host_name.raw\",\"size\":5,\"order\":\"asc\",\"orderBy\":\"_term\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "QRadar-CPU-Usage",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Event-Rate,-Median",
+    "_type": "visualization",
+    "_source": {
+      "title": "QRadar - Event Rate, Median",
+      "visState": "{\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"2\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"qradar_metric_value\",\"percents\":[50]}},{\"id\":\"3\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"qradar_host_name.raw\",\"size\":5,\"order\":\"asc\",\"orderBy\":\"_term\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "QRadar-Event-Rate",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Network,-Transmitted-and-Received-Bytes-(eth0)",
+    "_type": "visualization",
+    "_source": {
+      "title": "QRadar - Network, Transmitted and Received Bytes (eth0)",
+      "visState": "{\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"overlap\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"qradar_metric_value\",\"percents\":[50]}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"qradar_host_name.raw\",\"size\":5,\"order\":\"asc\",\"orderBy\":\"_term\",\"row\":true}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"qradar_metric_id.raw\",\"size\":5,\"order\":\"asc\",\"orderBy\":\"_term\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "QRadar-Network,-Transmitted-and-Received-Bytes-(eth0)",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Disk-Usage,-Median",
+    "_type": "visualization",
+    "_source": {
+      "title": "QRadar - Disk Usage, Median",
+      "visState": "{\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"grouped\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{},\"spyPerPage\":10},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"qradar_metric_value\",\"percents\":[50]}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"qradar_host_name.raw\",\"size\":5,\"order\":\"asc\",\"orderBy\":\"_term\",\"row\":true}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"qradar_metric_element.raw\",\"exclude\":{\"pattern\":\"\"},\"include\":{\"pattern\":\"/|/store|/store/tmp|/store/backupTSM|/var/log\"},\"size\":12,\"order\":\"asc\",\"orderBy\":\"_term\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"spy\":{\"mode\":{\"name\":null,\"fill\":false}}}",
+      "description": "",
+      "savedSearchId": "QRadar-Disk-Space-Used-(All-Mountpoints)",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Running-Queries,-Median- -Max",
+    "_type": "visualization",
+    "_source": {
+      "title": "QRadar - Running Queries, Median + Max",
+      "visState": "{\"type\":\"metric\",\"params\":{\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"qradar_metric_value\",\"percents\":[50]}},{\"id\":\"2\",\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"qradar_metric_value\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "QRadar-Running-Queries",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Log-Source-Statistics-(Table),-Median",
+    "_type": "visualization",
+    "_source": {
+      "title": "QRadar - Log Source Statistics (Table), Median",
+      "visState": "{\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 10,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"type\": \"median\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"qradar_metric_value\",\n        \"percents\": [\n          50\n        ]\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"type\": \"terms\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"qradar_metric_element.raw\",\n        \"size\": 15,\n        \"order\": \"desc\",\n        \"orderBy\": \"1.50\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "QRadar-Log-Source-Statistics",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Version,-Max",
+    "_type": "visualization",
+    "_source": {
+      "title": "QRadar - Version, Max",
+      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"qradar_metric_value\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"qradar_host_name.raw\",\"size\":10,\"order\":\"asc\",\"orderBy\":\"_term\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"qradar_metric_value_str.raw\",\"size\":10,\"order\":\"asc\",\"orderBy\":\"_term\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "QRadar-Version",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Log-Source-Statistics-(Not-Reporting),-by-Type,-Median",
+    "_type": "visualization",
+    "_source": {
+      "title": "QRadar - Log Source Statistics (Not Reporting), by Type, Median",
+      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":100,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"qradar_metric_value\",\"percents\":[50]}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"qradar_metric_element.raw\",\"size\":100,\"order\":\"desc\",\"orderBy\":\"1.50\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "QRadar-Log-Source-Statistics-(Not-Reporting),-by-Type",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Log-Source-Statistics,-by-Type,-Median",
+    "_type": "visualization",
+    "_source": {
+      "title": "QRadar - Log Source Statistics, by Type, Median",
+      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":100,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"qradar_metric_value\",\"percents\":[50]}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"qradar_metric_element.raw\",\"size\":100,\"order\":\"desc\",\"orderBy\":\"1.50\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "QRadar-Log-Source-Statistics,-by-Type",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Offense-Statistics,-Median",
+    "_type": "visualization",
+    "_source": {
+      "title": "QRadar - Offense Statistics, Median",
+      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"qradar_metric_value\",\"percents\":[50]}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"qradar_metric_element.raw\",\"size\":50,\"order\":\"asc\",\"orderBy\":\"_term\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "QRadar-Offense-Statistics",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Rule-Statistics,-Median",
+    "_type": "visualization",
+    "_source": {
+      "title": "QRadar - Rule Statistics, Median",
+      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"qradar_metric_value\",\"percents\":[50]}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"qradar_metric_element.raw\",\"size\":50,\"order\":\"asc\",\"orderBy\":\"_term\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "QRadar-Rule-Statistics",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Offense-Statistics,-Unassigned-and-Active,-Median",
+    "_type": "visualization",
+    "_source": {
+      "title": "QRadar - Offense Statistics, Unassigned and Active, Median",
+      "visState": "{\"type\":\"metric\",\"params\":{\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"qradar_metric_value\",\"percents\":[50]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "QRadar-Offense-Statistics,-Unassigned-and-Active",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Offense-Statistics,-All-by-Magnitude,-Median",
+    "_type": "visualization",
+    "_source": {
+      "title": "QRadar - Offense Statistics, All by Magnitude, Median",
+      "visState": "{\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":false,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"qradar_metric_value\",\"percents\":[50]}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"qradar_metric_element.raw\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"_term\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "QRadar-Offense-Statistics,-All-by-Magnitude",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Service-Status-Overview-(All-Hosts-and-Services),-Sum",
+    "_type": "visualization",
+    "_source": {
+      "title": "QRadar - Service Status Overview (All Hosts and Services), Sum",
+      "visState": "{\"type\":\"traffic\",\"params\":{\"fontSize\":60,\"greenThreshold\":1,\"invertScale\":true,\"redThreshold\":15,\"titleTraffic\":\"QRadar - Service Status Overview\",\"width\":\"80\",\"spyPerPage\":10},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"qradar_metric_value\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"qradar_host_name.raw\",\"size\":5,\"orderAgg\":{\"id\":\"2-orderAgg\",\"type\":\"sum\",\"schema\":\"orderAgg\",\"params\":{\"field\":\"qradar_metric_value\"}},\"order\":\"desc\",\"orderBy\":\"custom\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"spy\":{\"mode\":{\"name\":\"table\",\"fill\":false}}}",
+      "description": "",
+      "savedSearchId": "QRadar-Service-Status",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Memory-Usage,-Median",
+    "_type": "visualization",
+    "_source": {
+      "title": "QRadar - Memory Usage, Median",
+      "visState": "{\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"overlap\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":true,\"yAxis\":{\"max\":100,\"min\":0}},\"aggs\":[{\"id\":\"1\",\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"qradar_metric_value\",\"percents\":[50]}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"qradar_host_name.raw\",\"size\":5,\"order\":\"asc\",\"orderBy\":\"_term\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "QRadar-Memory-Usage",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  }
+]

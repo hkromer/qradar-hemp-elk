@@ -1,0 +1,363 @@
+[
+  {
+    "_id": "QRadar-Disk-Space-Used-(All-Mountpoints)",
+    "_type": "search",
+    "_source": {
+      "title": "QRadar - Disk Space Used (All Mountpoints)",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "qradar_host_name",
+        "qradar_metric_id",
+        "qradar_metric_element",
+        "qradar_metric_value"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"logstash-*\",\"key\":\"qradar_metric_id\",\"negate\":false,\"value\":\"DiskUsage\"},\"query\":{\"match\":{\"qradar_metric_id\":{\"query\":\"DiskUsage\",\"type\":\"phrase\"}}}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-CPU-Usage",
+    "_type": "search",
+    "_source": {
+      "title": "QRadar - CPU Usage",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "qradar_host_name",
+        "qradar_metric_id",
+        "qradar_metric_value"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"logstash-*\",\"key\":\"qradar_metric_id\",\"value\":\"ProcessCPU\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"qradar_metric_id\":{\"query\":\"ProcessCPU\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Event-Rate",
+    "_type": "search",
+    "_source": {
+      "title": "QRadar - Event Rate",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "qradar_host_name",
+        "qradar_metric_id",
+        "qradar_metric_value"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"logstash-*\",\"key\":\"qradar_metric_id\",\"value\":\"EventRate\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"qradar_metric_id\":{\"query\":\"EventRate\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Network,-Transmitted-and-Received-Bytes-(eth0)",
+    "_type": "search",
+    "_source": {
+      "title": "QRadar - Network, Transmitted and Received Bytes (eth0)",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "qradar_host_name",
+        "qradar_metric_id",
+        "qradar_metric_element",
+        "qradar_metric_value"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"qradar_metric_id:(Network*Bytes)\"}},\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"logstash-*\",\"key\":\"qradar_metric_element\",\"value\":\"eth0\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"qradar_metric_element\":{\"query\":\"eth0\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Running-Queries",
+    "_type": "search",
+    "_source": {
+      "title": "QRadar - Running Queries",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "qradar_host_name",
+        "qradar_metric_id",
+        "qradar_metric_value"
+      ],
+      "sort": [
+        "@timestamp",
+        "asc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"logstash-*\",\"key\":\"qradar_metric_id\",\"value\":\"RunningQueries\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"qradar_metric_id\":{\"query\":\"RunningQueries\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Memory-Usage",
+    "_type": "search",
+    "_source": {
+      "title": "QRadar - Memory Usage",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "qradar_host_name",
+        "qradar_metric_id",
+        "qradar_metric_value"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"logstash-*\",\"key\":\"qradar_metric_id\",\"value\":\"SystemMemoryUsed\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"qradar_metric_id\":{\"query\":\"SystemMemoryUsed\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Network,-Transmitted-and-Received-Bytes",
+    "_type": "search",
+    "_source": {
+      "title": "QRadar - Network, Transmitted and Received Bytes",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "qradar_host_name",
+        "qradar_metric_id",
+        "qradar_metric_element",
+        "qradar_metric_value"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"qradar_metric_id:(Network*Bytes)\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Version",
+    "_type": "search",
+    "_source": {
+      "title": "QRadar - Version",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "qradar_host_name",
+        "qradar_metric_id",
+        "qradar_metric_element",
+        "qradar_metric_value_str"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"logstash-*\",\"key\":\"qradar_metric_id\",\"value\":\"QRadarVersion\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"qradar_metric_id\":{\"query\":\"QRadarVersion\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Service-Status",
+    "_type": "search",
+    "_source": {
+      "title": "QRadar - Service Status",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "qradar_host_name",
+        "qradar_metric_element",
+        "qradar_metric_value"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"logstash-*\",\"key\":\"qradar_metric_id\",\"value\":\"ServiceStatus\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"qradar_metric_id\":{\"query\":\"ServiceStatus\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Log-Source-Statistics-(Not-Reporting),-by-Type",
+    "_type": "search",
+    "_source": {
+      "title": "QRadar - Log Source Statistics (Not Reporting), by Type",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "qradar_host_name",
+        "qradar_metric_element",
+        "qradar_metric_value"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"logstash-*\",\"key\":\"qradar_metric_id\",\"negate\":false,\"value\":\"LogSourceStatisticsDNRByType\"},\"query\":{\"match\":{\"qradar_metric_id\":{\"query\":\"LogSourceStatisticsDNRByType\",\"zero_terms_query\":\"all\"}}}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Log-Source-Statistics",
+    "_type": "search",
+    "_source": {
+      "title": "QRadar - Log Source Statistics",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "qradar_host_name",
+        "qradar_metric_id",
+        "qradar_metric_element",
+        "qradar_metric_value"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"logstash-*\",\"key\":\"qradar_metric_id\",\"negate\":false,\"value\":\"LogSourceStatistics LogSourceStatisticsDNRSummary\"},\"query\":{\"match\":{\"qradar_metric_id\":{\"query\":\"LogSourceStatistics LogSourceStatisticsDNRSummary\",\"operator\":\"or\",\"zero_terms_query\":\"all\"}}}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Log-Source-Statistics,-by-Type",
+    "_type": "search",
+    "_source": {
+      "title": "QRadar - Log Source Statistics, by Type",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "qradar_host_name",
+        "qradar_metric_element",
+        "qradar_metric_value"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"logstash-*\",\"key\":\"qradar_metric_id\",\"negate\":false,\"value\":\"LogSourceStatisticsByType\"},\"query\":{\"match\":{\"qradar_metric_id\":{\"query\":\"LogSourceStatisticsByType\",\"zero_terms_query\":\"all\"}}}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Offense-Statistics,-Unassigned-and-Active",
+    "_type": "search",
+    "_source": {
+      "title": "QRadar - Offense Statistics, Unassigned and Active",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "qradar_host_name",
+        "qradar_metric_id",
+        "qradar_metric_element",
+        "qradar_metric_value"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"logstash-*\",\"key\":\"qradar_metric_id\",\"negate\":false,\"value\":\"OffenseStatistics\"},\"query\":{\"match\":{\"qradar_metric_id\":{\"query\":\"OffenseStatistics\",\"type\":\"phrase\"}}}},{\"meta\":{\"negate\":false,\"index\":\"logstash-*\",\"key\":\"qradar_metric_element\",\"value\":\"UnassignedActive\",\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"qradar_metric_element\":{\"query\":\"UnassignedActive\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Offense-Statistics,-All-by-Magnitude",
+    "_type": "search",
+    "_source": {
+      "title": "QRadar - Offense Statistics, All by Magnitude",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "qradar_host_name",
+        "qradar_metric_id",
+        "qradar_metric_element",
+        "qradar_metric_value"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"logstash-*\",\"key\":\"qradar_metric_id\",\"negate\":false,\"value\":\"OffenseStatisticsByMagnitude\"},\"query\":{\"match\":{\"qradar_metric_id\":{\"query\":\"OffenseStatisticsByMagnitude\",\"type\":\"phrase\"}}}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Offense-Statistics",
+    "_type": "search",
+    "_source": {
+      "title": "QRadar - Offense Statistics",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "qradar_host_name",
+        "qradar_metric_id",
+        "qradar_metric_element",
+        "qradar_metric_value"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"logstash-*\",\"key\":\"qradar_metric_id\",\"negate\":false,\"value\":\"OffenseStatistics\"},\"query\":{\"match\":{\"qradar_metric_id\":{\"query\":\"OffenseStatistics\",\"type\":\"phrase\"}}}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}"
+      }
+    }
+  },
+  {
+    "_id": "QRadar-Rule-Statistics",
+    "_type": "search",
+    "_source": {
+      "title": "QRadar - Rule Statistics",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "qradar_host_name",
+        "qradar_metric_id",
+        "qradar_metric_element",
+        "qradar_metric_value"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"logstash-*\",\"key\":\"qradar_metric_id\",\"negate\":false,\"value\":\"RuleStatistics\"},\"query\":{\"match\":{\"qradar_metric_id\":{\"query\":\"RuleStatistics\",\"type\":\"phrase\"}}}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}"
+      }
+    }
+  }
+]
