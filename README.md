@@ -18,4 +18,4 @@ Includes visualisations and related searches for:
 * Service Status
 * QRadar Version
  
- QRadar-HeMP can be found here: [IBM Security QRadar - Health Metrics Plus](https://github.com/hkromer/qradar-hemp)
+QRadar-HeMP can be found here: [IBM Security QRadar - Health Metrics Plus](https://github.com/hkromer/qradar-hemp)
