@@ -19,3 +19,7 @@ Includes visualisations and related searches for:
 * QRadar Version
  
 QRadar-HeMP can be found here: [IBM Security QRadar - Health Metrics Plus](https://github.com/hkromer/qradar-hemp)
+
+## Note
+
+**The app is abandoned since 2017** - I have no plans for using it.
